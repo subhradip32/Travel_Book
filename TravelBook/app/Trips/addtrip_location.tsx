@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import * as colors from "../../constants/colors"; 
 import * as urls from "../../utils/urls"; 
+import LocationData from "./../../components/try";
 
 export default function Addtrip_location(){
     const [location, setlocation] = useState(""); 
 
-    function handlelocation(){
+    async function handlelocation(){
         console.log(location);
-        urls.HandleLocationQuery(location);
+        var data = await urls.HandleLocationQuery(location);
+        data.forEach((item: any, index: number) => {
+            console.log(index, item.display_name);
+        });
     }
 
     // useEffect(() => {
@@ -18,6 +22,7 @@ export default function Addtrip_location(){
     return(
         <View>
             <TextInput style={style.input_feild} onChangeText={setlocation} value={location} placeholder="Enter Location" onEndEditing={handlelocation}/>
+            <LocationData name="hello"/>
         </View>
     ); 
 }

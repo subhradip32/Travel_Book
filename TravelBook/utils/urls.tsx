@@ -10,5 +10,9 @@ export async function HandleLocationQuery(query: string) {
   );
 
   const data = await response.json();
-  console.log(data);
+  return data; 
+  // console.log(data);
+  // data.forEach((item: any, index: number) => {
+  //   console.log(index, item.display_name);
+  // });
 }
