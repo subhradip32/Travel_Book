@@ -1,6 +1,6 @@
 import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import * as colors from "../../constants/colors";
+import * as colors from "../../../constants/colors";
 import { useRouter } from "expo-router";
 
 

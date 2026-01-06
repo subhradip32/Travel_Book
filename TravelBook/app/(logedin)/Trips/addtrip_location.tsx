@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
-import * as colors from "../../constants/colors"; 
-import * as urls from "../../utils/urls"; 
-import LocationData from "./../../components/try";
+import * as colors from "../../../constants/colors"; 
+import * as urls from "../../../utils/urls"; 
 
 export default function Addtrip_location(){
     const [location, setlocation] = useState(""); 
@@ -15,14 +14,11 @@ export default function Addtrip_location(){
         });
     }
 
-    // useEffect(() => {
-    //     console.log(location);
-    // }, [location]); 
+    useEffect(()=>{handlelocation(); }, [location]); 
 
     return(
         <View>
             <TextInput style={style.input_feild} onChangeText={setlocation} value={location} placeholder="Enter Location" onEndEditing={handlelocation}/>
-            <LocationData name="hello"/>
         </View>
     ); 
 }
